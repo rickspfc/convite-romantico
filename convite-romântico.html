@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="coracao">💖</div>
+
+    <h1>Mari posso te visitar amanhã? diz que sim🥹</h1>
+    <p id="mensagem">quero te irritar pessoalmente</p>
+
+    <div class="botoes">
+      <button id="sim" class="botao-sim">Sim 💕</button>
+      <button id="nao" class="botao-nao">Não 😢</button>
+    </div>
+  </main>
+
+  <script>
+    const botaoNao = document.getElementById("nao");
+    const botaoSim = document.getElementById("sim");
+
+    botaoNao.addEventListener("pointerenter", fugir);
+    botaoNao.addEventListener("pointerdown", fugir);
+
+    function fugir() {
+      const margem = 16;
+      const largura = Math.max(margem, window.innerWidth - botaoNao.offsetWidth - margem);
+      const altura = Math.max(margem, window.innerHeight - botaoNao.offsetHeight - margem);
+
+      botaoNao.style.position = "fixed";
+      botaoNao.style.left = `${Math.random() * largura}px`;
+      botaoNao.style.top = `${Math.random() * altura}px`;
+    }
+
+    botaoSim.addEventListener("click", () => {
+      const telefone = "5511982059176";
+      const texto = encodeURIComponent(
+        "Sss, Rick, venha venha"
+      );
+
+      window.location.href = `https://wa.me/${telefone}?text=${texto}`;
+    });
+  </script>
+</body>
+</html>
